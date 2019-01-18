@@ -1,5 +1,6 @@
 # react全家桶从0到1(最新)
 本文从零开始，逐步讲解如何用react全家桶搭建一个完整的react项目。文中针对react、webpack、babel、react-route、redux、redux-saga的核心配置会加以讲解，希望通过这个项目，可以系统的了解react技术栈的主要知识，避免搭建一次后面就忘记的情况。
+
 [代码库：https://github.com/teapot-py/react-demo](https://github.com/teapot-py/react-demo)
 
 **首先关于主要的npm包版本列一下：**
@@ -149,7 +150,9 @@ npm i babel-loader@8 @babel/core @babel/preset-env @babel/preset-react -D
 }
 ```
 **配置HtmlWebPackPlugin**
+
 这个插件最主要的作用是将js代码通过<script>标签注入到 HTML 文件中
+
 ```
 npm i html-webpack-plugin -D
 ````
