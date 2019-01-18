@@ -187,7 +187,7 @@ module.exports = {
 ```
 **执行 npm run start，生成 dist文件夹**
 当前目录结构如下
-![b5e8053409ac66f093f8289feb90158b.png](evernotecid://AE784552-2477-4700-990B-17A5AAE0A09B/appyinxiangcom/22566670/ENResource/p8)
+![目录结构](https://github.com/teapot-py/img-list/blob/master/react-demo/1547811588876.jpg?raw=true)
 可以看到在dist文件加下生成了index.html文件，我们在浏览器中打开文件即可看到App组件内容。
 # 配置 webpack-dev-server
 webpack-dev-server可以极大的提高我们的开发效率，通过监听文件变化，自动更新页面
@@ -316,7 +316,7 @@ export default connect(
     })
 )(App);
 ```
-![0853241ea4574ccb4bdf00115bccf68d.png](evernotecid://AE784552-2477-4700-990B-17A5AAE0A09B/appyinxiangcom/22566670/ENResource/p9)
+![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194149@2x.png?raw=true)
 点击旁边的数字会不断地+1
 ## 引入redux-saga
 > redux-saga通过监听action来执行有副作用的task，以保持action的简洁性。引入了sagas的机制和generator的特性，让redux-saga非常方便地处理复杂异步问题。
@@ -394,8 +394,7 @@ export default connect(
 )(App);
 ```
 观察结果我们会发现如下报错：
-![0eec0df3ab1628b14a6c9e4310ef9610.png](evernotecid://AE784552-2477-4700-990B-17A5AAE0A09B/appyinxiangcom/22566670/ENNote/p86?hash=0eec0df3ab1628b14a6c9e4310ef9610)
-
+![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194230@2x.png?raw=true)
 这是因为在redux-saga中用到了Generator函数，以我们目前的babel配置来说并不支持解析generator，需要安装@babel/plugin-transform-runtime
 ```
 npm install --save-dev @babel/plugin-transform-runtime
@@ -436,7 +435,7 @@ Babel 为了解决这个问题，提供了单独的包babel-runtime供编译模�
   ]
 }
 ```
-![f6d22a9a76ac85914cbae8a5dd310e4f.png](evernotecid://AE784552-2477-4700-990B-17A5AAE0A09B/appyinxiangcom/22566670/ENResource/p11)
+![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194208@2x.png?raw=true)
 点击按钮会在2秒后执行+1操作。
 ## 引入react-router
 > 在web应用开发中，路由系统是不可或缺的一部分。在浏览器当前的URL发生变化时，路由系统会做出一些响应，用来保证用户界面与URL的同步。随着单页应用时代的到来，为之服务的前端路由系统也相继出现了。而react-route则是与react相匹配的前端路由。
@@ -520,7 +519,7 @@ export default connect(
     })
 )(App);
 ```
-![dc0b4d6bfce0298ef777b1e9d321002a.png](evernotecid://AE784552-2477-4700-990B-17A5AAE0A09B/appyinxiangcom/22566670/ENResource/p12)
+![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194128@2x.png?raw=true)
 点击列表可以跳转相关路由
 ## 总结
 
