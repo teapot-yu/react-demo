@@ -157,6 +157,7 @@ npm i babel-loader@8 @babel/core @babel/preset-env @babel/preset-react -D
 npm i html-webpack-plugin -D
 ````
 **webpack新增HtmlWebPackPlugin配置**
+
 至此，我们看一下webpack.config.js文件的完整结构
 ```
 const path = require('path');
@@ -190,11 +191,15 @@ module.exports = {
 };
 ```
 **执行 npm run start，生成 dist文件夹**
+
 当前目录结构如下
 ![目录结构](https://github.com/teapot-py/img-list/blob/master/react-demo/1547811588876.jpg?raw=true)
+
 可以看到在dist文件加下生成了index.html文件，我们在浏览器中打开文件即可看到App组件内容。
+
 # 配置 webpack-dev-server
 webpack-dev-server可以极大的提高我们的开发效率，通过监听文件变化，自动更新页面
+
 **安装 webpack-dev-server 作为 dev 依赖项**
 
 ```
@@ -321,17 +326,23 @@ export default connect(
 )(App);
 ```
 ![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194149@2x.png?raw=true)
+
 点击旁边的数字会不断地+1
+
 ## 引入redux-saga
 > redux-saga通过监听action来执行有副作用的task，以保持action的简洁性。引入了sagas的机制和generator的特性，让redux-saga非常方便地处理复杂异步问题。
 redux-saga的原理其实说起来也很简单，通过劫持异步action，在redux-saga中进行异步操作，异步结束后将结果传给另外的action。
 
 下面就接着我们计数器的例子，来实现一个异步的+1操作。
+
 **安装依赖包**
+
 ```
 npm i redux-saga -D
 ```
+
 **新建src/sagas/index.js文件**
+
 ```
 import { delay } from 'redux-saga'
 import { put, takeEvery } from 'redux-saga/effects'
@@ -345,10 +356,13 @@ export function* watchIncrementAsync() {
   yield takeEvery('INCREMENT_ASYNC', incrementAsync)
 }
 ```
+
 解释下所做的事情，将watchIncrementAsync理解为一个saga，在这个saga中监听了名为INCREMENT_ASYNC的action，当INCREMENT_ASYNC被dispatch时，会调用incrementAsync方法，在该方法中做了异步操作，然后将结果传给名为INCREMENT的action进而更新store。
 
 **更新store.js**
+
 在store中加入redux-saga中间件
+
 ```
 import { createStore, applyMiddleware } from 'redux';
 import incrementReducer from './reducers/index';
@@ -397,9 +411,12 @@ export default connect(
     })
 )(App);
 ```
+
 观察结果我们会发现如下报错：
 ![](https://github.com/teapot-py/img-list/blob/master/react-demo/WX20190118-194230@2x.png?raw=true)
+
 这是因为在redux-saga中用到了Generator函数，以我们目前的babel配置来说并不支持解析generator，需要安装@babel/plugin-transform-runtime
+
 ```
 npm install --save-dev @babel/plugin-transform-runtime
 ```
